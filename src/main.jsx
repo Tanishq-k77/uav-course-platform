@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from '@/App';
 import AdminDashboard from '@/pages/AdminDashboard.jsx';
+import AdminCourseBuilder from '@/pages/AdminCourseBuilder.jsx';
 import AdminLogin from '@/pages/AdminLogin.jsx';
 import Login from '@/pages/Login.jsx';
 import Register from '@/pages/Register.jsx';
@@ -27,6 +28,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         element={
           <ProtectedAdminRoute>
             <AdminDashboard />
+          </ProtectedAdminRoute>
+        }
+      />
+      <Route
+        path="/admin/course/:courseId"
+        element={
+          <ProtectedAdminRoute>
+            <AdminCourseBuilder />
           </ProtectedAdminRoute>
         }
       />
